@@ -103,6 +103,21 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/user',
+    name: 'user',
+    component: Layout,
+    meta: {
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/user/index'),
+        meta: { title: '用户管理', icon: 'el-icon-s-custom', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',

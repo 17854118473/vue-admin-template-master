@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-row>
-      <el-col :span="8"><el-button @click="handleAdd" >添加管理员</el-button></el-col>
+<!--      <el-col :span="8"><el-button @click="handleAdd" ></el-button></el-col>-->
       <el-col :span="8"><el-input v-model="ListQuery.searchName" placeholder="请输入需要检索的用户名" class="input-with-select"></el-input></el-col>
       <el-col :span="7">
         <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
@@ -22,11 +22,6 @@
         width="180">
       </el-table-column>
       <el-table-column
-        prop="category"
-        label="类别"
-        width="180">
-      </el-table-column>
-      <el-table-column
         prop="tel"
         label="电话"
         width="180">
@@ -34,6 +29,16 @@
       <el-table-column
         prop="email"
         label="邮箱"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="img"
+        label="头像"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="wechat"
+        label="微信号"
         width="180">
       </el-table-column>
       <el-table-column label="操作">
@@ -44,7 +49,7 @@
           <el-button
             size="mini"
             type="danger"
-            @click="handleDelete(scope.row.id)">删除</el-button>
+            @click="handleDelete(scope.row.userid)">删除</el-button>
         </template>
       </el-table-column>
       <el-dialog
@@ -63,6 +68,16 @@
           <el-form-item label="电话">
             <el-input v-model="input.tel"></el-input>
           </el-form-item>
+          <el-form-item label="邮箱">
+            <el-input v-model="input.email"></el-input>
+          </el-form-item>
+          <el-form-item label="头像">
+            <el-input v-model="input.email"></el-input>
+
+          </el-form-item>
+          <el-form-item label="微信号">
+            <el-input v-model="input.wechat"></el-input>
+          </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
           <el-button @click="handleClose">取 消</el-button>
@@ -80,7 +95,7 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('admins', ['title', 'List', 'Total', 'ListQuery', 'dialogFormVisible', 'input'])
+    ...mapState('userManager', ['title', 'List', 'Total', 'ListQuery', 'dialogFormVisible', 'input'])
   },
   data() {
     return {
@@ -96,7 +111,7 @@ export default {
   },
   // 里面写的方法
   methods: {
-    ...mapActions('admins', ['fetchData', 'handleEdit', 'handleAdd', 'handleClose', 'handleSave', 'handleDelete', 'handleSearch'])
+    ...mapActions('userManager', ['fetchData', 'handleEdit', 'handleAdd', 'handleClose', 'handleSave', 'handleDelete', 'handleSearch'])
   }
 }
 </script>
