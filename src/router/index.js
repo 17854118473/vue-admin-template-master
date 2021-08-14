@@ -133,6 +133,21 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/enviroment',
+    name: 'enviroment',
+    component: Layout,
+    meta: {
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/enviroment/index'),
+        meta: { title: '室内环境信息', icon: 'el-icon-cloudy', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
