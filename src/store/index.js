@@ -8,6 +8,7 @@ import admins from './modules/admins'
 import userManager from './modules/userManager'
 import oldPeople from './modules/oldPeople'
 import enviroment from './modules/enviroment'
+import physiology from './modules/physiology'
 
 Vue.use(Vuex)
 
@@ -19,7 +20,8 @@ const store = new Vuex.Store({
     admins,
     userManager,
     oldPeople,
-    enviroment
+    enviroment,
+    physiology
   },
   getters
 })

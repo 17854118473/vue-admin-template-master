@@ -148,6 +148,21 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/physiology',
+    name: 'physiology',
+    component: Layout,
+    meta: {
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/physiology/index'),
+        meta: { title: '老人生理信息', icon: 'el-icon-cloudy', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
