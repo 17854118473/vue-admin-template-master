@@ -118,6 +118,21 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/oldPeople',
+    component: Layout,
+    meta: {
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/oldpeople/index'),
+        name: 'oldPeople',
+        meta: { title: '老人信息', icon: 'el-icon-s-custom', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/nested',
     component: Layout,
     redirect: '/nested/menu1',
