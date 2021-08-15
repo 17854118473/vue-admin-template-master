@@ -6,22 +6,22 @@
       <el-table-column
         prop="bloodPressure"
         label="血压"
-        width="100">
+        width="180">
       </el-table-column>
       <el-table-column
         prop="bloodSugar"
         label="血糖"
-        width="100">
+        width="180">
       </el-table-column>
       <el-table-column
         prop="gas"
         label="血压"
-        width="100">
+        width="180">
       </el-table-column>
       <el-table-column
         prop="time"
         label="时间"
-        width="100">
+        width="180">
       </el-table-column>
     </el-table>
   </div>

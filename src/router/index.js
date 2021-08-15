@@ -143,7 +143,7 @@ export const constantRoutes = [
       {
         path: 'index',
         component: () => import('@/views/enviroment/index'),
-        meta: { title: '室内环境信息', icon: 'el-icon-cloudy', noCache: true }
+        meta: { title: '室内环境信息', icon: 'el-icon-s-home', noCache: true }
       }
     ]
   },
@@ -158,7 +158,22 @@ export const constantRoutes = [
       {
         path: 'index',
         component: () => import('@/views/physiology/index'),
-        meta: { title: '老人生理信息', icon: 'el-icon-cloudy', noCache: true }
+        meta: { title: '老人生理信息', icon: 'el-icon-s-data', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/equipment',
+    name: 'equipment',
+    component: Layout,
+    meta: {
+      roles: ['admin']
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/equipment/index'),
+        meta: { title: '设备信息', icon: 'el-icon-s-tools', noCache: true }
       }
     ]
   },

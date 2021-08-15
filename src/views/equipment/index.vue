@@ -4,19 +4,23 @@
       :data="List"
       style="width: 100%">
       <el-table-column
-        prop="temperature"
-        label="温度"
-        width="180">
-<!--        <el-link href="https://element.eleme.io" target="_blank">温度</el-link>-->
-      </el-table-column>
-      <el-table-column
-        prop="humidity"
-        label="湿度"
+        prop="equipment1"
+        label="设备1"
         width="180">
       </el-table-column>
       <el-table-column
-        prop="gas"
-        label="气压"
+        prop="equipment2"
+        label="设备2"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="equipment3"
+        label="设备3"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="equipment4"
+        label="设备4"
         width="180">
       </el-table-column>
       <el-table-column
@@ -33,7 +37,7 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState('enviroment', ['title', 'List'])
+    ...mapState('equipment', ['title', 'List'])
   },
   data() {
     return {
@@ -44,7 +48,7 @@ export default {
     this.fetchData()
   },
   methods: {
-    ...mapActions('enviroment', ['fetchData'])
+    ...mapActions('equipment', ['fetchData'])
   }
 }
 </script>
