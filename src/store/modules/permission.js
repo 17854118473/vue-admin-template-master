@@ -51,12 +51,10 @@ const actions = {
     return new Promise(resolve => {
       let accessedRoutes
       if (roles.includes('admin')) {
-        var arr = []
+        const arr = []
         asyncRoutes.forEach((item) => {
-          // eslint-disable-next-line no-prototype-builtins
-          if (item.hasOwnProperty('meta')) {
-            // eslint-disable-next-line no-prototype-builtins
-            if (item.meta.hasOwnProperty('roles')) {
+          if (Object.prototype.hasOwnProperty.call(item, 'meta')) {
+            if (Object.prototype.hasOwnProperty.call(item.meta, 'roles')) {
               if (item.meta.roles.includes('admin')) {
                 arr.push(item)
               }

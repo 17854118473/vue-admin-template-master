@@ -40,9 +40,18 @@
           <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
-
+      <el-form-item>
+        <span class="svg-container">
+          <svg-icon icon-class="user"/>
+        </span>
+        <el-select v-model="loginForm.identity" placeholder="identity">
+          <el-option label="普通用户" value="commonUser"></el-option>
+          <el-option label="管理员" value="admin"></el-option>
+          <el-option label="超级管理员" value="superAdmin"></el-option>
+        </el-select>
+      </el-form-item>
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
-
+      <el-button type="danger" style="width:100%;margin-bottom:30px;margin-left: 0px" @click.native.prevent="forgetPassword">忘记密码？</el-button>
 <!--      <div class="tips">-->
 <!--        <span style="margin-right:20px;">username: admin</span>-->
 <!--        <span> password: any</span>-->
@@ -75,7 +84,8 @@ export default {
     return {
       loginForm: {
         username: '',
-        password: ''
+        password: '',
+        identity: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -120,6 +130,9 @@ export default {
           return false
         }
       })
+    },
+    forgetPassword() {
+      this.$router.push({ path: '/forgetPassword' })
     }
   }
 }
@@ -161,6 +174,12 @@ $cursor: #fff;
         -webkit-text-fill-color: $cursor !important;
       }
     }
+  }
+
+  .el-select {
+    display: inline-block;
+    height: 47px;
+    width: 90%;
   }
 
   .el-form-item {

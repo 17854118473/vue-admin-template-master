@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <el-row>
-      <el-col :span="8"><el-button @click="handleAdd" >添加管理员</el-button></el-col>
+      <el-col :span="8"><el-button @click="handleAdd">添加管理员</el-button></el-col>
       <el-col :span="8"><el-input v-model="ListQuery.searchName" placeholder="请输入需要检索的用户名" class="input-with-select"></el-input></el-col>
       <el-col :span="7">
         <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>

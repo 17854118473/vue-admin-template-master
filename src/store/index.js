@@ -9,7 +9,9 @@ import userManager from './modules/userManager'
 import oldPeople from './modules/oldPeople'
 import enviroment from './modules/enviroment'
 import physiology from './modules/physiology'
-import equipment from '@/store/modules/equipment'
+import equipment from './modules/equipment'
+import permission from './modules/permission'
+import reminder from './modules/reminder'
 
 Vue.use(Vuex)
 
@@ -23,7 +25,9 @@ const store = new Vuex.Store({
     oldPeople,
     enviroment,
     physiology,
-    equipment
+    equipment,
+    permission,
+    reminder
   },
   getters
 })
